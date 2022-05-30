@@ -1,0 +1,9 @@
+.sm-nav {
+    display: none;
+}
+
+@media screen and (max-width:576px) {
+    .sm-nav {
+        display: block;
+    }
+}

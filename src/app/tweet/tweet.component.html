@@ -1,0 +1,17 @@
+<div class="container mt-5">
+    <label for="user">Thumbnail & Handle Name</label>
+    <div class="">
+        <input (change)="tnFile($event)" name="file" class="form-control" id="user" type="file" multiple>
+    </div>
+    <div class="mb-3">
+        <input [(ngModel)]="handleName" class="form-control" type="text" name="" id="">
+    </div>
+    <label for="content">Tweet & Image</label>
+    <div class="form-group">
+        <textarea id="content" [(ngModel)]="tweet" class="form-control w-80" rows="10"></textarea>
+    </div>
+    <div class="mb-3">
+        <input (change)="imgFile($event)" name="file" class="form-control" type="file" multiple>
+    </div>
+    <button (click)="addNewtweet()" class="btn btn-primary">Tweet</button>
+</div>

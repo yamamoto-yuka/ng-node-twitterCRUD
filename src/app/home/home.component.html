@@ -1,0 +1,43 @@
+<app-header></app-header>
+<div class="container">
+    <div class="row">
+        <div class="nav col-md-1 col-lg-3">menu</div>
+        <div class="col-md-10 col-lg-6">
+            <h2>HOME</h2>
+            <div class="tweet d-flex flex-column justify-content-between" *ngFor=" let tweet of tweets ">
+                <div class="d-flex">
+                    <div class="tn-warapper ">
+                        <img [src]="'http://localhost:4400/'+ tweet.thumbnail " [alt]="tweet.handle_name ">
+                    </div>
+                    <div class="content-warapper">
+                        <p>@{{tweet.handle_name}}</p>
+                        <p>{{tweet.description}}</p>
+                        <div class="img-warapper">
+                            <img [src]="'http://localhost:4400/'+tweet.image" [alt]="tweet.image">
+                        </div>
+                    </div>
+                    <div class="menu">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-three-dots-vertical" viewBox="0 0 16 16">
+              <path
+                d="M9.5 13a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0z" />
+            </svg>
+                    </div>
+                </div>
+                <div class="reactBtn d-flex justify-content-around">
+                    <i class="fa-solid fa-comment d-flex align-items-center"></i>
+                    <div class="retweet d-flex align-items-center">
+                        <i class="fa-solid fa-retweet"></i>
+                        <p>23</p>
+                    </div>
+                    <div class="liked d-flex align-items-center">
+                        <i class="fa-solid fa-heart"></i>
+                        <p>23</p>
+                    </div>
+                    <i class="fa-solid fa-share d-flex align-items-center"></i>
+                </div>
+            </div>
+        </div>
+        <div class="nav col-md-1 col-lg-3">menu</div>
+
+    </div>
+</div>
