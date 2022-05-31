@@ -45,8 +45,57 @@
     margin-left: .5rem;
 }
 
-@media screen and (max-width:576px) {
+@media screen and (max-width:768px) {
     .nav {
         display: none;
     }
+}
+
+.delete,
+.dots {
+    cursor: pointer;
+}
+
+.dots {
+    margin-right: 1rem;
+}
+
+.dots:hover {
+    color: blue;
+}
+
+.delete:hover {
+    color: red;
+}
+
+@keyframes fadeout {
+    from {
+        opacity: 1;
+    }
+    to {
+        opacity: 0;
+    }
+}
+
+.fadeout {
+    animation: fadeout 2s;
+}
+
+.add,
+.profile {
+    cursor: pointer;
+    padding: 10px 20px;
+    border-radius: 20px;
+}
+
+.add:hover,
+.profile:hover {
+    background-color: rgb(151, 151, 151);
+}
+
+.add p,
+.profile p {
+    margin-bottom: 0;
+    margin-left: 1rem;
+    font-size: 1.5rem;
 }

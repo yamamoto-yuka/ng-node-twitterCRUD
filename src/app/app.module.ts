@@ -8,6 +8,7 @@ import { HeaderComponent } from './header/header.component';
 import { HomeComponent } from './home/home.component';
 import { TweetComponent } from './tweet/tweet.component';
 import { AccountComponent } from './account/account.component';
+import { UpdateComponent } from './update/update.component';
 
 @NgModule({
   declarations: [
@@ -15,7 +16,8 @@ import { AccountComponent } from './account/account.component';
     HeaderComponent,
     HomeComponent,
     TweetComponent,
-    AccountComponent
+    AccountComponent,
+    UpdateComponent
   ],
   imports: [
     BrowserModule,

@@ -13,6 +13,14 @@
                     <p>Home</p>
                 </div>
 
+                <div routerLink="/tweet" class="add d-flex align-items-center">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="plus bi bi-plus-circle-fill" viewBox="0 0 16 16">
+            <path
+              d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM8.5 4.5a.5.5 0 0 0-1 0v3h-3a.5.5 0 0 0 0 1h3v3a.5.5 0 0 0 1 0v-3h3a.5.5 0 0 0 0-1h-3v-3z" />
+          </svg>
+                    <p>Tweet</p>
+                </div>
+
                 <div routerLink="/account" class="profile d-flex align-items-center">
                     <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-person-fill" viewBox="0 0 16 16">
             <path d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H3zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6z" />
@@ -22,22 +30,23 @@
             </div>
         </div>
         <div class="col-md-6">
-            <h1>Tweet</h1>
+            <h1>Edit</h1>
             <label for="user">Thumbnail & Handle Name</label>
             <div class="">
+                <!-- <img [src]="'http://localhost:4400/'" [(ngModel)]="thubnail" alt=""> -->
                 <input (change)="tnFile($event)" name="file" class="form-control" id="user" type="file" multiple>
             </div>
             <div class="mb-3">
                 <input [(ngModel)]="handleName" class="form-control" type="text" name="" id="">
             </div>
-
+            <label for="content">Tweet & Image</label>
             <div class="form-group">
-                <textarea id="content" [(ngModel)]="tweet" class="form-control w-80" rows="10" placeholder="What's happening?"></textarea>
+                <textarea id="content" [(ngModel)]="tweet" class="form-control w-80" rows="10"></textarea>
             </div>
             <div class="mb-3">
                 <input (change)="imgFile($event)" name="file" class="form-control" type="file" multiple>
             </div>
-            <button (click)="addNewtweet()" class="btn btn-primary">Tweet</button>
+            <button (click)="updatetweet()" class="btn btn-primary">Tweet</button>
         </div>
         <div class="nav col-md-3"></div>
     </div>
