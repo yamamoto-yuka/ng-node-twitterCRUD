@@ -9,6 +9,7 @@ export class TweetService {
   private URL = "http://localhost:4400/tweets";
   private deleteFromFolderURL = "http://localhost:4400/tweet";
   private fileuploadURL = 'http://localhost:4400/upload';
+  private multifileuploadURL = 'http://localhost:4400/multiplefiles'
   constructor(private http: HttpClient) { }
 
   getAlltweets() {
@@ -17,6 +18,9 @@ export class TweetService {
 
   uploadFile(formadata: any) {
     return this.http.post(this.fileuploadURL, formadata);
+  }
+  mltipleUpload(formdata:any){
+    return this.http.post(this.multifileuploadURL, formdata);
   }
 
   addNewTweet(handleName:string,thumbnail:string, description:string, image:string) {

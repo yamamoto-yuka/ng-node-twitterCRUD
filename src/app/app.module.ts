@@ -9,6 +9,7 @@ import { HomeComponent } from './home/home.component';
 import { TweetComponent } from './tweet/tweet.component';
 import { AccountComponent } from './account/account.component';
 import { UpdateComponent } from './update/update.component';
+import { FileuploadComponent } from './fileupload/fileupload.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { UpdateComponent } from './update/update.component';
     HomeComponent,
     TweetComponent,
     AccountComponent,
-    UpdateComponent
+    UpdateComponent,
+    FileuploadComponent
   ],
   imports: [
     BrowserModule,

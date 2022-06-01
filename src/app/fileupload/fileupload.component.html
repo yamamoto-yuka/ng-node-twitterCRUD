@@ -1,0 +1,35 @@
+
+<h2 style="text-align: center">Multiple</h2>
+<div style="text-align: center">
+  <form>
+    <div>
+      <input
+        #multipleInput
+        type="file"
+        name="images"
+        multiple
+        (change)="selectMultipleImage($event)"
+      />
+    </div>
+    <br />
+    <div>
+      <button type="submit" (click)="onMultiopleSubmit()">
+        Multiple Upload
+      </button>
+    </div>
+  </form>
+  <ng-template
+    [ngIf]="displayMultipleImages"
+    [ngIfElse]="elseMultipleImagesTemplate"
+  >
+    <div>Images Uploaded</div>
+    <ul>
+  this is image
+    </ul>
+  </ng-template>
+ 
+  <ng-template #elseMultipleImagesTemplate>
+    <br /><br />
+    <div>Please Upload Some Images</div>
+  </ng-template>
+</div>
