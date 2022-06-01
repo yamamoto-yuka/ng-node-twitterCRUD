@@ -19,7 +19,7 @@ export class TweetComponent implements OnInit {
   constructor(private ts:TweetService, private router:Router) { }
 
  
-
+  //Append filedata of thumbnails
   tnFile(event: any) {
     let myfile = event.target.files[0];
     this.tnfilename = myfile.name;
@@ -27,7 +27,7 @@ export class TweetComponent implements OnInit {
     formdata.append("file", myfile, myfile.name);
     this.tnformdata = formdata;
   }
-
+  //Append filedata of image
   imgFile(event:any) {
     let myfile = event.target.files[0];
     this.imgfilename = myfile.name;
@@ -39,11 +39,15 @@ export class TweetComponent implements OnInit {
   addNewtweet() {
     this.ts.addNewTweet(this.handleName, this.tnfilename, this.tweet, this.imgfilename).subscribe(newtweet => {
       console.log(newtweet);
+      // Upload thumbnails to the Physical folder
       this.ts.uploadFile(this.tnformdata).subscribe(tnuploadMessage => {
         console.log(tnuploadMessage);
+        // Upload image of the tweet content to the Physical folder
         this.ts.uploadFile(this.imgformdata).subscribe(imguploadmessage => {
           console.log(imguploadmessage);
+          // Push all additional information to the array.
           this.tweets.unshift(newtweet.newtweet[0]);
+          // Reload to the home page
           this.router.navigate(['/']);
         })
       })
